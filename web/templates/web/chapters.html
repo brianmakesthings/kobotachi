@@ -11,9 +11,9 @@
             <li>
                 <a 
                 {% if chapter.isDownloaded %}
-                href="http://192.168.0.206:4567/api/v1/manga/{{ manga_id }}/chapter/{{ chapter.sourceOrder }}/download_cbz"
+                href="http://tachidesk:4567/api/v1/manga/{{ manga_id }}/chapter/{{ chapter.sourceOrder }}/download_cbz"
                 {% else %}
-                href="http://192.168.0.206:4567/api/v1/download/{{ manga_id }}/chapter/{{ chapter.sourceOrder }}"
+                href="http://tachidesk:4567/api/v1/download/{{ manga_id }}/chapter/{{ chapter.sourceOrder }}"
                 {% endif %}
                 >
                     {{ chapter.name|truncatechars:20 }}
