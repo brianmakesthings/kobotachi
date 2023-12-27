@@ -8,7 +8,7 @@
     <h1>Kobotachi</h1>
     <ul>
         {% for manga in manga_list %}
-            <li><a href="/web/{{ manga.id }}">{{ manga.title }}</a></li>
+            <li><a href="/{{ manga.id }}">{{ manga.title }}</a></li>
         {% endfor %}
     </ul>
   </body>
