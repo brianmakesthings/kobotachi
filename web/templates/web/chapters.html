@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kobotachi</title>
+  </head>
+  <body>
+    <h1>{{ manga_title }}</h1>
+    <ul>
+        {% for chapter in chapters %}
+            <li>
+                <a 
+                {% if chapter.isDownloaded %}
+                href="http://192.168.0.206:4567/api/v1/manga/{{ manga_id }}/chapter/{{ chapter.sourceOrder }}/download_cbz"
+                {% else %}
+                href="http://192.168.0.206:4567/api/v1/download/{{ manga_id }}/chapter/{{ chapter.sourceOrder }}"
+                {% endif %}
+                >
+                    {{ chapter.name|truncatechars:20 }}
+                    -
+                    {% if chapter.isDownloaded %}
+                        Downloaded
+                    {% else %}
+                        Not Downloaded
+                    {% endif %}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+  </body>
+</html>

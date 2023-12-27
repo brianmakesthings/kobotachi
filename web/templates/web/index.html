@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kobotachi</title>
+  </head>
+  <body>
+    <h1>Kobotachi</h1>
+    <ul>
+        {% for manga in manga_list %}
+            <li><a href="/web/{{ manga.id }}">{{ manga.title }}</a></li>
+        {% endfor %}
+    </ul>
+  </body>
+</html>
